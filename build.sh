@@ -3,10 +3,10 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 src="${1:-cv.html}"
-name="Lucas Kaminski CV"
+name="Lucas_Kaminski_CV"
 # cv-howdy.html -> "Lucas Kaminski CV howdy.pdf"
-suffix="$(basename "${src%.html}" | sed 's/^cv-*//; s/-/ /g')"
-[ -n "$suffix" ] && name="$name $suffix"
+suffix="$(basename "${src%.html}" | sed "s/^cv-*//; s/-/_/g")"
+[ -n "$suffix" ] && name="${name}_${suffix}"
 out="dist/$name.pdf"
 mkdir -p dist
 google-chrome --headless=new --disable-gpu --no-pdf-header-footer \

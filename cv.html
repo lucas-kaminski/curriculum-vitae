@@ -1,4 +1,5 @@
 <!doctype html>
+<html lang="en">
 <meta charset="utf-8">
 <title>Lucas Kaminski CV</title>
 <style>
@@ -7,100 +8,114 @@
   body {
     font: 9.2pt/1.45 "JetBrains Mono", "DejaVu Sans Mono", monospace;
     color: #111; margin: 0;
+    text-align: justify; hyphens: auto;
   }
-  header { text-align: center; margin-bottom: 10px; }
-  h1 { font-size: 17pt; letter-spacing: .22em; margin: 0 0 2px; }
-  .role { letter-spacing: .16em; font-size: 8.4pt; color: #444; }
-  .contact { font-size: 8.4pt; margin-top: 6px; }
+  a { color: inherit; text-decoration: none; }
+  a[href]:hover { text-decoration: underline; }
+
+  header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 20px; padding-bottom: 8px; border-bottom: 2px solid #111;
+  }
+  h1 { font-size: 19pt; letter-spacing: .18em; margin: 0; line-height: 1.1; }
+  .role { letter-spacing: .14em; font-size: 8.4pt; color: #444; margin-top: 4px; }
+  .contact { font-size: 8.4pt; text-align: right; line-height: 1.6; white-space: nowrap; }
+
   h2 {
-    font-size: 8.6pt; letter-spacing: .18em; margin: 14px 0 6px;
+    font-size: 8.6pt; letter-spacing: .18em; margin: 15px 0 7px;
     padding-bottom: 2px; border-bottom: 1px solid #111;
   }
-  .job { margin-bottom: 10px; break-inside: avoid; }
-  .job-head { display: flex; justify-content: space-between; gap: 10px; }
-  .job-head b { font-weight: 700; }
-  .job-head span { color: #555; white-space: nowrap; font-size: 8.4pt; }
-  .blurb { color: #555; font-size: 8.4pt; font-style: italic; }
-  .title { font-weight: 700; }
-  ul { margin: 3px 0 0; padding-left: 15px; }
-  li { margin-bottom: 2px; }
-  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
-  .kv { display: grid; grid-template-columns: 88px 1fr; gap: 1px 8px; }
+  p { margin: 0; }
+
+  .entry { margin-bottom: 11px; break-inside: avoid; }
+  .entry-head { display: flex; justify-content: space-between; gap: 12px; text-align: left; }
+  .entry-head b { font-weight: 700; }
+  .entry-head span { color: #555; white-space: nowrap; font-size: 8.4pt; }
+  .blurb { color: #555; font-size: 8.4pt; font-style: italic; text-align: left; }
+  .title { font-weight: 700; text-align: left; }
+  ul { margin: 4px 0 0; padding-left: 15px; }
+  li { margin-bottom: 3px; }
+
+  .kv { display: grid; grid-template-columns: 104px 1fr; gap: 2px 8px; margin: 0; text-align: left; }
   .kv dt { font-weight: 700; }
   .kv dd { margin: 0; }
+
   footer {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    padding-top: 4px; border-top: 1px solid #ccc;
-    font-size: 7.6pt; color: #555; text-align: center; white-space: nowrap;
+    margin-top: 18px; padding-top: 7px; border-top: 2px solid #111;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 5px 20px; font-size: 8.4pt; color: #444;
+    break-inside: avoid;
   }
-  footer :first-child { text-align: left; }
-  footer :last-child { text-align: right; }
-  p { margin: 2px 0 0; }
-  a { color: inherit; text-decoration: none; }
+  footer :nth-child(even) { text-align: right; }
 </style>
 
 <header>
-  <h1>LUCAS KAMINSKI</h1>
-  <div class="role">SOFTWARE ENGINEER · FULL-STACK · BACKEND</div>
-  <div class="contact">contact@lucas-kaminski.dev · +55 41 99811-9091 · Curitiba, Brazil (UTC-3)</div>
+  <div>
+    <h1>LUCAS KAMINSKI</h1>
+    <div class="role">PRODUCT ENGINEER &middot; FULL-STACK &middot; BACKEND</div>
+  </div>
+  <div class="contact">
+    <a href="mailto:contact@lucas-kaminski.dev">contact@lucas-kaminski.dev</a><br>
+    <a href="tel:+5541998119091">+55 41 99811-9091</a><br>
+    São Francisco do Sul, SC, Brazil (UTC-3)
+  </div>
 </header>
 
 <h2>SUMMARY</h2>
-<p>Full-Stack Backend Engineer with over 5 years of professional experience and 2 years
-running my own SaaS products. I am good at spotting what a product actually needs,
-getting stakeholders aligned on it, and shipping the backend systems behind AI products,
-crypto exchanges, data pipelines and real-time decision-making.</p>
+<p>Product Engineer with over 5 years of professional experience and 2 years running my own
+SaaS products. I like owning a problem end to end: figuring out what the product actually
+needs, getting stakeholders aligned on it, and shipping the backend systems behind AI
+products, crypto exchanges, data pipelines and real-time decision-making.</p>
 
 <h2>SKILLS</h2>
 <dl class="kv">
   <dt>Languages</dt><dd>TypeScript, JavaScript, Python, SQL</dd>
-  <dt>Backend</dt><dd>Node.js (NestJS, Express), FastAPI, Flask, REST, SOAP</dd>
+  <dt>Backend</dt><dd>Node.js, NestJS, Express, FastAPI, Flask, REST, SOAP</dd>
   <dt>Frontend</dt><dd>React, Next.js</dd>
   <dt>Data</dt><dd>PostgreSQL, MongoDB, Firestore, MySQL, Oracle PL/SQL, Redis, Prisma</dd>
   <dt>Cloud</dt><dd>GCP, AWS, Vercel, Docker, Kubernetes, Terraform</dd>
-  <dt>Practices</dt><dd>CI/CD (GitHub Actions), IaC, ETL pipelines, unit testing (Jest)</dd>
+  <dt>Practices</dt><dd>CI/CD with GitHub Actions, IaC, ETL pipelines, unit testing with Jest</dd>
 </dl>
 
 <h2>PROFESSIONAL EXPERIENCE</h2>
 
-<div class="job">
-  <div class="job-head"><b>Bento</b><span>06/2025 to Present · Remote</span></div>
-  <div class="blurb">Logistics tech startup powering 80% of food deliveries in the Cayman Islands</div>
+<div class="entry">
+  <div class="entry-head"><b><a href="https://bento.ky">Bento</a></b><span>06/2025 to Present &middot; Remote</span></div>
+  <div class="blurb">Logistics tech startup powering over 80% of food deliveries in the Cayman Islands</div>
   <div class="title">Senior Backend Software Engineer</div>
   <ul>
-    <li>Led the development of a multi-API NestJS monolith integrated with GCP services such as PostgreSQL (Cloud SQL), Firestore, App Distribution and Redis.</li>
+    <li>Led the development of a multi-API NestJS monolith backed by PostgreSQL, Firestore and Redis on GCP.</li>
     <li>Wrote and maintained the Terraform setup that keeps development, staging and production reproducible.</li>
-    <li>Designed and built BentoGPT, an internal AI API that powers automation and intelligent features across internal and external platforms.</li>
     <li>Work directly with founders and operations stakeholders to scope requirements and turn them into delivered features.</li>
+    <li>Designed and built BentoGPT, an internal AI API that powers automation and intelligent features across internal and external platforms.</li>
     <li>Deployed a custom GL-based tile server for map visualization, which cut our reliance on third-party providers like OpenStreetMap.</li>
   </ul>
 </div>
 
-<div class="job">
-  <div class="job-head"><b>meu.software</b><span>04/2024 to Present · Remote</span></div>
+<div class="entry">
+  <div class="entry-head"><b><a href="https://meu.software">meu.software</a></b><span>04/2024 to Present &middot; Remote</span></div>
   <div class="blurb">Independent studio building and operating small SaaS products</div>
-  <div class="title">Founder &amp; Engineer</div>
+  <div class="title">Founder and Engineer</div>
   <ul>
-    <li>Build, ship and operate SaaS products end to end, from product decisions to backend (Node.js and Python over PostgreSQL), frontend, infrastructure and customer support.</li>
-    <li>Run the full stack on self-managed infrastructure (GCP and Coolify), including deployments, monitoring and backups.</li>
+    <li>Build, ship and operate SaaS products end to end, from product decisions to backend with Node.js and Python over PostgreSQL, frontend, infrastructure and customer support.</li>
+    <li>Run everything on self-managed infrastructure with GCP and Coolify, including deployments, monitoring and backups.</li>
   </ul>
 </div>
 
-<div class="job">
-  <div class="job-head"><b>Financial Move</b><span>06/2022 to 06/2025 · Remote</span></div>
-  <div class="blurb">EdTech/FinTech startup focused on cryptocurrencies and Web3</div>
+<div class="entry">
+  <div class="entry-head"><b>Financial Move</b><span>06/2022 to 06/2025 &middot; Remote</span></div>
+  <div class="blurb">EdTech and FinTech startup focused on cryptocurrencies and Web3</div>
   <div class="title">From Junior IV Backend to Senior I Full-Stack Software Engineer</div>
   <ul>
     <li>Led the development of backend and full-stack products supporting crypto conversational bots, trading platforms and exchange integrations for 10,000+ monthly active users and 50+ employees.</li>
-    <li>Built and maintained ETL scripts and internal APIs using Python (Flask, FastAPI) and TypeScript (Express), containerized with Docker, orchestrated via Kubernetes, with CI/CD in GitHub Actions.</li>
+    <li>Built and maintained ETL scripts and internal APIs using Python with Flask and FastAPI and TypeScript with Express, containerized with Docker, orchestrated via Kubernetes, with CI/CD in GitHub Actions.</li>
     <li>Managed cloud infrastructure across AWS, GCP, MongoDB Atlas and Vercel, enabling scalable deployments and real-time blockchain data ingestion.</li>
     <li>Joined as the first engineer and helped shape team growth and technical direction as the company scaled to 10+ developers.</li>
   </ul>
 </div>
 
-<div class="job">
-  <div class="job-head"><b>Siemens R&amp;D Hub Curitiba</b><span>01/2022 to 06/2022 · Hybrid</span></div>
+<div class="entry">
+  <div class="entry-head"><b><a href="https://www.siemens.com">Siemens R&amp;D Hub Curitiba</a></b><span>01/2022 to 06/2022 &middot; Hybrid</span></div>
   <div class="blurb">Multinational technology company focused on smart grid solutions</div>
   <div class="title">Backend Developer Intern</div>
   <ul>
@@ -110,26 +125,33 @@ crypto exchanges, data pipelines and real-time decision-making.</p>
   </ul>
 </div>
 
-<div class="job">
-  <div class="job-head"><b>Excel Solutions</b><span>05/2021 to 12/2021 · Remote</span></div>
+<div class="entry">
+  <div class="entry-head"><b>Excel Solutions</b><span>05/2021 to 12/2021 &middot; Remote</span></div>
   <div class="blurb">Microsoft Excel training and consulting company</div>
   <div class="title">Full-Stack Developer Intern</div>
   <ul>
-    <li>Improved internal systems with TypeScript (React and Next.js) and Node.js (Express), using Prisma ORM over MySQL and unit tests in Jest.</li>
+    <li>Improved internal systems with TypeScript using React and Next.js and Node.js with Express, using Prisma ORM over MySQL and unit tests in Jest.</li>
   </ul>
 </div>
 
 <h2>EDUCATION</h2>
-<div class="job-head"><b>Bachelor's Degree in Data Science and Artificial Intelligence</b><span>UNIDOMBOSCO · 2024</span></div>
-<div class="job-head"><b>Technical Degree in Computer Science</b><span>TECPUC Curitiba · 2018</span></div>
+
+<div class="entry">
+  <div class="entry-head"><b>Bachelor's Degree in Data Science and Artificial Intelligence</b><span>completed in 2024 &middot; Remote</span></div>
+  <div class="blurb">UNIDOMBOSCO, Curitiba</div>
+</div>
+
+<div class="entry">
+  <div class="entry-head"><b>Technical Degree in Computer Science</b><span>completed in 2018 &middot; In-person</span></div>
+  <div class="blurb">TECPUC, Curitiba</div>
+</div>
 
 <h2>LANGUAGES</h2>
-<div class="cols">
-  <div class="job-head"><b>Portuguese</b><span>Native</span></div>
-  <div class="job-head"><b>Spanish</b><span>Intermediate</span></div>
-  <div class="job-head"><b>English</b><span>Advanced</span></div>
-  <div class="job-head"><b>Dutch</b><span>Intermediate</span></div>
-</div>
+<dl class="kv">
+  <dt>Native</dt><dd>Portuguese</dd>
+  <dt>Advanced</dt><dd>English</dd>
+  <dt>Intermediate</dt><dd>Spanish, Dutch</dd>
+</dl>
 
 <footer>
   <span><a href="https://lucas-kaminski.dev">lucas-kaminski.dev</a></span>
