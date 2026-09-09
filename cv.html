@@ -14,7 +14,7 @@
   a[href]:hover { text-decoration: underline; }
 
   header {
-    display: flex; justify-content: space-between; align-items: flex-end;
+    display: flex; justify-content: space-between; align-items: center;
     gap: 20px; padding-bottom: 4px;
   }
   h1 { font-size: 19pt; letter-spacing: .18em; margin: 0; line-height: 1.1; }
@@ -23,17 +23,18 @@
   .contact { font-size: 8.4pt; text-align: right; line-height: 1.6; white-space: nowrap; }
 
   h2 {
-    font-size: 8.6pt; letter-spacing: .18em; margin: 15px 0 7px;
+    font-size: 8.6pt; letter-spacing: .18em; margin: 12px 0 6px;
     padding-bottom: 2px; border-bottom: 1px solid #111;
   }
   p { margin: 0; }
 
-  .entry { margin-bottom: 11px; }
+  .entry { margin-bottom: 8px; }
   .entry-head, .blurb, .title { break-after: avoid; }
   li { orphans: 2; widows: 2; }
   .entry-head { display: flex; justify-content: space-between; gap: 12px; text-align: left; }
   .entry-head b { font-weight: 700; }
-  .entry-head span { color: #555; white-space: nowrap; font-size: 8.4pt; }
+  .entry-head span { color: #555; white-space: nowrap; font-size: 8.4pt; text-align: right; line-height: 1.3; }
+  .entry-head span i { display: block; font-style: normal; color: #777; font-size: 8pt; }
   .blurb { color: #555; font-size: 8.4pt; font-style: italic; text-align: left; }
   .title { font-weight: 700; text-align: left; }
   ul { margin: 4px 0 0; padding-left: 15px; }
@@ -44,8 +45,8 @@
   .kv dd { margin: 0; }
 
   footer {
-    margin-top: 18px; padding-top: 7px; border-top: 2px solid #111;
-    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-top: 14px; padding-top: 7px; border-top: 2px solid #111;
+    display: flex; justify-content: space-between; align-items: center;
     gap: 20px; font-size: 8pt; color: #444;
     white-space: nowrap; text-align: left; break-inside: avoid;
   }
@@ -66,12 +67,12 @@
 </header>
 
 <h2>SUMMARY</h2>
-<p>Software Engineer with over 5 years of professional experience and 2 years running my own
-SaaS products. I am usually the engineer who turns a vague problem into something running in
-production: first engineer hired at a fintech that scaled to 10+ developers and 10,000+
-monthly active users, lead of the backend behind over 80% of a country's food deliveries, and
-founder of the SaaS products I build and operate today. I work close to product and
-stakeholders, and I own what I ship after it goes live.</p>
+<p>Software Engineer who tends to get pulled in early and ends up owning the parts nobody
+volunteers for: the data model, the deploy pipeline, the integration that keeps breaking.
+Five years across fintech, crypto and logistics taught me that shipping is the easy half, so
+I stay close to the product after release and to the people who depend on it. I also build
+and run my own SaaS on infrastructure I maintain myself, which keeps me honest about the cost
+of every decision I make at work.</p>
 
 <h2>SKILLS</h2>
 <dl class="kv">
@@ -80,13 +81,13 @@ stakeholders, and I own what I ship after it goes live.</p>
   <dt>Frontend</dt><dd>React, Next.js</dd>
   <dt>Data</dt><dd>PostgreSQL, MongoDB, Firestore, MySQL, Oracle PL/SQL, Redis, Prisma</dd>
   <dt>Cloud</dt><dd>GCP, AWS, Vercel, Docker, Kubernetes, Terraform</dd>
-  <dt>Practices</dt><dd>CI/CD with GitHub Actions, IaC, ETL pipelines, unit testing with Jest</dd>
+  <dt>Practices</dt><dd>CI/CD with GitHub Actions, IaC, ETL pipelines, testing from unit to e2e and smoke</dd>
 </dl>
 
 <h2>PROFESSIONAL EXPERIENCE</h2>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://bento.ky">Bento</a></b><span>06/2025 to Present &middot; Remote</span></div>
+  <div class="entry-head"><b><a href="https://bento.ky">Bento</a></b><span>06/2025 to Present<i>Remote</i></span></div>
   <div class="blurb">Logistics tech startup powering over 80% of food deliveries in the Cayman Islands</div>
   <div class="title">Senior Backend Software Engineer</div>
   <ul>
@@ -99,9 +100,9 @@ stakeholders, and I own what I ship after it goes live.</p>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://meu.software">meu.software</a></b><span>04/2024 to Present &middot; Remote</span></div>
+  <div class="entry-head"><b><a href="https://meu.software">meu.software</a></b><span>04/2024 to Present<i>Remote</i></span></div>
   <div class="blurb">Independent studio building and operating small SaaS products</div>
-  <div class="title">Founder and Engineer</div>
+  <div class="title">Founder and Product Engineer</div>
   <ul>
     <li>Build and ship the products end to end with TypeScript on Next.js and React, and Python services with FastAPI, SQLAlchemy and Alembic over PostgreSQL, MySQL and MongoDB.</li>
     <li>Run the whole platform on a self-managed Hetzner VPS with Coolify, Docker and Traefik, with GitHub Actions deploying to staging and production.</li>
@@ -111,7 +112,7 @@ stakeholders, and I own what I ship after it goes live.</p>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b>Financial Move</b><span>06/2022 to 06/2025 &middot; Remote</span></div>
+  <div class="entry-head"><b>Financial Move</b><span>06/2022 to 06/2025<i>Remote</i></span></div>
   <div class="blurb">EdTech and FinTech startup focused on cryptocurrencies and Web3</div>
   <div class="title">From Junior IV Backend to Senior I Full-Stack Software Engineer</div>
   <ul>
@@ -123,7 +124,7 @@ stakeholders, and I own what I ship after it goes live.</p>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://www.siemens.com">Siemens R&amp;D Hub Curitiba</a></b><span>01/2022 to 06/2022 &middot; Hybrid</span></div>
+  <div class="entry-head"><b><a href="https://www.siemens.com">Siemens R&amp;D Hub Curitiba</a></b><span>01/2022 to 06/2022<i>Hybrid</i></span></div>
   <div class="blurb">R&amp;D hub of a multinational technology company, working on smart grid solutions</div>
   <div class="title">Backend Developer Intern</div>
   <ul>
@@ -134,7 +135,7 @@ stakeholders, and I own what I ship after it goes live.</p>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b>Excel Solutions</b><span>05/2021 to 12/2021 &middot; Remote</span></div>
+  <div class="entry-head"><b>Excel Solutions</b><span>05/2021 to 12/2021<i>Remote</i></span></div>
   <div class="blurb">Microsoft Excel training and consulting company</div>
   <div class="title">Full-Stack Developer Intern</div>
   <ul>
@@ -142,18 +143,33 @@ stakeholders, and I own what I ship after it goes live.</p>
   </ul>
 </div>
 
-<h2>EDUCATION</h2>
+<h2>PROJECTS</h2>
 
 <div class="entry">
-  <div class="entry-head"><b>Bachelor's Degree in Data Science and Artificial Intelligence</b><span>2022 to 2024 &middot; Remote</span></div>
-  <div class="blurb">UNIDOMBOSCO, Curitiba</div>
-  <ul><li>Completed the degree while working full time as a backend engineer.</li></ul>
+  <div class="entry-head"><b>Adra</b><span>Next.js, MongoDB, Stripe</span></div>
+  <div class="blurb">SaaS that detects ad cloaking for advertisers and affiliate networks</div>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b>Technical Degree in Computer Science</b><span>2015 to 2018 &middot; In-person</span></div>
+  <div class="entry-head"><b>Meu Próprio Bot</b><span>Python, FastAPI, MCP</span></div>
+  <div class="blurb">CRM driven by a chatbot, so a small business runs its pipeline from a chat window</div>
+</div>
+
+<div class="entry">
+  <div class="entry-head"><b>KeepUp</b><span>Next.js, Prisma, PostgreSQL</span></div>
+  <div class="blurb">Back-in-stock and price alerts for online shoppers, with scraper workers behind it</div>
+</div>
+
+<h2>EDUCATION</h2>
+
+<div class="entry">
+  <div class="entry-head"><b>Bachelor's Degree in Data Science and Artificial Intelligence</b><span>2022 to 2024<i>Remote</i></span></div>
+  <div class="blurb">UNIDOMBOSCO, Curitiba</div>
+</div>
+
+<div class="entry">
+  <div class="entry-head"><b>Technical Degree in Computer Science</b><span>2015 to 2018<i>In-person</i></span></div>
   <div class="blurb">TECPUC, Curitiba</div>
-  <ul><li>Four-year technical program covering programming, databases and networks.</li></ul>
 </div>
 
 <h2>LANGUAGES</h2>
