@@ -31,9 +31,9 @@
   .entry { margin-bottom: 8px; }
   .entry-head, .blurb, .title { break-after: avoid; }
   li { orphans: 2; widows: 2; }
-  .entry-head { display: flex; justify-content: space-between; gap: 12px; text-align: left; }
+  .entry-head { position: relative; padding-right: 130px; text-align: left; }
   .entry-head b { font-weight: 700; }
-  .entry-head span { color: #555; white-space: nowrap; font-size: 8.4pt; text-align: right; line-height: 1.3; }
+  .entry-head span { position: absolute; top: 0; right: 0; color: #555; white-space: nowrap; font-size: 8.4pt; text-align: right; line-height: 1.45; }
   .entry-head span i { display: block; font-style: normal; color: #777; font-size: 8pt; }
   .blurb { color: #555; font-size: 8.4pt; font-style: italic; text-align: left; }
   .title { font-weight: 700; text-align: left; }
@@ -81,7 +81,7 @@ of every decision I make at work.</p>
   <dt>Frontend</dt><dd>React, Next.js</dd>
   <dt>Data</dt><dd>PostgreSQL, MongoDB, Firestore, MySQL, Oracle PL/SQL, Redis, Prisma</dd>
   <dt>Cloud</dt><dd>GCP, AWS, Vercel, Docker, Kubernetes, Terraform</dd>
-  <dt>Practices</dt><dd>CI/CD with GitHub Actions, IaC, ETL pipelines, testing from unit to e2e and smoke</dd>
+  <dt>Practices</dt><dd>CI/CD with GitHub Actions, IaC, ETL pipelines, testing</dd>
 </dl>
 
 <h2>PROFESSIONAL EXPERIENCE</h2>
@@ -91,9 +91,9 @@ of every decision I make at work.</p>
   <div class="blurb">Logistics tech startup powering over 80% of food deliveries in the Cayman Islands</div>
   <div class="title">Senior Backend Software Engineer</div>
   <ul>
-    <li>Led the development of a multi-API NestJS monolith backed by PostgreSQL, Firestore and Redis on GCP.</li>
-    <li>Wrote and maintained the Terraform setup that keeps staging and production reproducible.</li>
+    <li>Led the backend into a multi-API platform that the mobile app, the web app and internal tools all run on.</li>
     <li>Work directly with founders and operations stakeholders to scope requirements and turn them into delivered features.</li>
+    <li>Built it as a NestJS monolith over PostgreSQL, Firestore and Redis on GCP, with Terraform keeping staging and production reproducible.</li>
     <li>Designed and built Benny, an internal AI API that powers automation and intelligent features across internal and external platforms.</li>
     <li>Deployed a custom GL-based tile server for map visualization, which cut our reliance on third-party providers like OpenStreetMap.</li>
   </ul>
@@ -104,7 +104,8 @@ of every decision I make at work.</p>
   <div class="blurb">Independent studio building and operating small SaaS products</div>
   <div class="title">Founder and Product Engineer</div>
   <ul>
-    <li>Build and ship the products end to end with TypeScript on Next.js and React, and Python services with FastAPI, SQLAlchemy and Alembic over PostgreSQL, MySQL and MongoDB.</li>
+    <li>Ship and operate three SaaS products on my own, from the first commit to answering the user who reports the bug.</li>
+    <li>Build them with TypeScript on Next.js and React, and Python services with FastAPI, SQLAlchemy and Alembic over PostgreSQL, MySQL and MongoDB.</li>
     <li>Run the whole platform on a self-managed Hetzner VPS with Coolify, Docker and Traefik, with GitHub Actions deploying to staging and production.</li>
     <li>Own reliability myself: Uptime Kuma for availability, Grafana, Loki and Alloy for logs, and layered backups to Backblaze B2.</li>
     <li>Keep shared code in a versioned internal library instead of a service, so a repeated need costs one dependency bump rather than another moving part.</li>
