@@ -1,6 +1,6 @@
 <!doctype html>
 <meta charset="utf-8">
-<title>Lucas Kaminski — CV</title>
+<title>Lucas Kaminski CV</title>
 <style>
   @page { size: A4; margin: 14mm 16mm; }
   * { box-sizing: border-box; }
@@ -30,9 +30,12 @@
   .kv dd { margin: 0; }
   footer {
     position: fixed; bottom: 0; left: 0; right: 0;
-    display: flex; justify-content: space-between; gap: 12px;
-    font-size: 8pt; color: #555;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    padding-top: 4px; border-top: 1px solid #ccc;
+    font-size: 7.6pt; color: #555; text-align: center; white-space: nowrap;
   }
+  footer :first-child { text-align: left; }
+  footer :last-child { text-align: right; }
   p { margin: 2px 0 0; }
   a { color: inherit; text-decoration: none; }
 </style>
@@ -40,14 +43,14 @@
 <header>
   <h1>LUCAS KAMINSKI</h1>
   <div class="role">SOFTWARE ENGINEER · FULL-STACK · BACKEND</div>
-  <div class="contact">contact@lucas-kaminski.dev · +55 41 99811-9091 · Curitiba, Brazil (UTC−3)</div>
+  <div class="contact">contact@lucas-kaminski.dev · +55 41 99811-9091 · Curitiba, Brazil (UTC-3)</div>
 </header>
 
 <h2>SUMMARY</h2>
-<p>Full-Stack Backend Engineer with 5 years of professional experience, plus 1 as a
-founder. Skilled in identifying opportunities, aligning with stakeholders, and
-delivering backend systems that power AI products, crypto exchanges, data pipelines,
-and real-time decision-making.</p>
+<p>Full-Stack Backend Engineer with over 5 years of professional experience and 2 years
+running my own SaaS products. I am good at spotting what a product actually needs,
+getting stakeholders aligned on it, and shipping the backend systems behind AI products,
+crypto exchanges, data pipelines and real-time decision-making.</p>
 
 <h2>SKILLS</h2>
 <dl class="kv">
@@ -62,42 +65,42 @@ and real-time decision-making.</p>
 <h2>PROFESSIONAL EXPERIENCE</h2>
 
 <div class="job">
-  <div class="job-head"><b>Bento</b><span>06/2025 – Now · Remote</span></div>
+  <div class="job-head"><b>Bento</b><span>06/2025 to Present · Remote</span></div>
   <div class="blurb">Logistics tech startup powering 80% of food deliveries in the Cayman Islands</div>
   <div class="title">Senior Backend Software Engineer</div>
   <ul>
     <li>Led the development of a multi-API NestJS monolith integrated with GCP services such as PostgreSQL (Cloud SQL), Firestore, App Distribution and Redis.</li>
-    <li>Built and maintained IaC using Terraform for scalable, reproducible development, staging and production environments.</li>
-    <li>Designed and implemented "BentoGPT", an internal AI API enabling automation and intelligent features across internal and external platforms.</li>
+    <li>Wrote and maintained the Terraform setup that keeps development, staging and production reproducible.</li>
+    <li>Designed and built BentoGPT, an internal AI API that powers automation and intelligent features across internal and external platforms.</li>
     <li>Work directly with founders and operations stakeholders to scope requirements and turn them into delivered features.</li>
-    <li>Deployed a custom GL-based tile server for map visualization, significantly reducing reliance on third-party providers like OpenStreetMap.</li>
+    <li>Deployed a custom GL-based tile server for map visualization, which cut our reliance on third-party providers like OpenStreetMap.</li>
   </ul>
 </div>
 
 <div class="job">
-  <div class="job-head"><b>meu.software</b><span>04/2024 – Now · Remote</span></div>
+  <div class="job-head"><b>meu.software</b><span>04/2024 to Present · Remote</span></div>
   <div class="blurb">Independent studio building and operating small SaaS products</div>
   <div class="title">Founder &amp; Engineer</div>
   <ul>
-    <li>Build, ship and operate SaaS products end to end — product decisions, backend (Node.js and Python over PostgreSQL), frontend, infrastructure and customer support.</li>
+    <li>Build, ship and operate SaaS products end to end, from product decisions to backend (Node.js and Python over PostgreSQL), frontend, infrastructure and customer support.</li>
     <li>Run the full stack on self-managed infrastructure (GCP and Coolify), including deployments, monitoring and backups.</li>
   </ul>
 </div>
 
 <div class="job">
-  <div class="job-head"><b>Financial Move</b><span>06/2022 – 06/2025 · Remote</span></div>
+  <div class="job-head"><b>Financial Move</b><span>06/2022 to 06/2025 · Remote</span></div>
   <div class="blurb">EdTech/FinTech startup focused on cryptocurrencies and Web3</div>
   <div class="title">From Junior IV Backend to Senior I Full-Stack Software Engineer</div>
   <ul>
     <li>Led the development of backend and full-stack products supporting crypto conversational bots, trading platforms and exchange integrations for 10,000+ monthly active users and 50+ employees.</li>
     <li>Built and maintained ETL scripts and internal APIs using Python (Flask, FastAPI) and TypeScript (Express), containerized with Docker, orchestrated via Kubernetes, with CI/CD in GitHub Actions.</li>
     <li>Managed cloud infrastructure across AWS, GCP, MongoDB Atlas and Vercel, enabling scalable deployments and real-time blockchain data ingestion.</li>
-    <li>First engineer hired; contributed to team growth and technical direction as the company scaled to 10+ developers.</li>
+    <li>Joined as the first engineer and helped shape team growth and technical direction as the company scaled to 10+ developers.</li>
   </ul>
 </div>
 
 <div class="job">
-  <div class="job-head"><b>Siemens — R&amp;D Hub Curitiba</b><span>01/2022 – 06/2022 · Hybrid</span></div>
+  <div class="job-head"><b>Siemens R&amp;D Hub Curitiba</b><span>01/2022 to 06/2022 · Hybrid</span></div>
   <div class="blurb">Multinational technology company focused on smart grid solutions</div>
   <div class="title">Backend Developer Intern</div>
   <ul>
@@ -108,11 +111,11 @@ and real-time decision-making.</p>
 </div>
 
 <div class="job">
-  <div class="job-head"><b>Excel Solutions</b><span>05/2021 – 12/2021 · Remote</span></div>
+  <div class="job-head"><b>Excel Solutions</b><span>05/2021 to 12/2021 · Remote</span></div>
   <div class="blurb">Microsoft Excel training and consulting company</div>
   <div class="title">Full-Stack Developer Intern</div>
   <ul>
-    <li>Improved internal systems with TypeScript (React, Next.js) and Node.js (Express), integrating MySQL via Prisma ORM with unit tests in Jest.</li>
+    <li>Improved internal systems with TypeScript (React and Next.js) and Node.js (Express), using Prisma ORM over MySQL and unit tests in Jest.</li>
   </ul>
 </div>
 
@@ -121,11 +124,16 @@ and real-time decision-making.</p>
 <div class="job-head"><b>Technical Degree in Computer Science</b><span>TECPUC Curitiba · 2018</span></div>
 
 <h2>LANGUAGES</h2>
-<p>Portuguese — Native · English — Advanced · Spanish — Intermediate · Dutch — Intermediate</p>
+<div class="cols">
+  <div class="job-head"><b>Portuguese</b><span>Native</span></div>
+  <div class="job-head"><b>Spanish</b><span>Intermediate</span></div>
+  <div class="job-head"><b>English</b><span>Advanced</span></div>
+  <div class="job-head"><b>Dutch</b><span>Intermediate</span></div>
+</div>
 
 <footer>
-  <span>lucas-kaminski.dev</span>
-  <span>github.com/lucas-kaminski</span>
-  <span>linkedin.com/in/lucas-kaminski</span>
+  <span><a href="https://lucas-kaminski.dev">lucas-kaminski.dev</a></span>
+  <span><a href="https://github.com/lucas-kaminski">github.com/lucas-kaminski</a></span>
+  <span><a href="https://linkedin.com/in/lucas-kaminski">linkedin.com/in/lucas-kaminski</a></span>
   <span>Updated <script>document.write(new Date().toLocaleString("en-US",{month:"long",year:"numeric"}))</script></span>
 </footer>
