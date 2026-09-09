@@ -15,10 +15,11 @@
 
   header {
     display: flex; justify-content: space-between; align-items: flex-end;
-    gap: 20px; padding-bottom: 8px; border-bottom: 2px solid #111;
+    gap: 20px; padding-bottom: 4px;
   }
   h1 { font-size: 19pt; letter-spacing: .18em; margin: 0; line-height: 1.1; }
-  .role { letter-spacing: .14em; font-size: 8.4pt; color: #444; margin-top: 4px; }
+  .role { letter-spacing: .16em; font-size: 10pt; font-weight: 700; margin-top: 5px; }
+  .role-sub { letter-spacing: .12em; font-size: 8.2pt; color: #666; margin-top: 2px; }
   .contact { font-size: 8.4pt; text-align: right; line-height: 1.6; white-space: nowrap; }
 
   h2 {
@@ -27,7 +28,9 @@
   }
   p { margin: 0; }
 
-  .entry { margin-bottom: 11px; break-inside: avoid; }
+  .entry { margin-bottom: 11px; }
+  .entry-head, .blurb, .title { break-after: avoid; }
+  li { orphans: 2; widows: 2; }
   .entry-head { display: flex; justify-content: space-between; gap: 12px; text-align: left; }
   .entry-head b { font-weight: 700; }
   .entry-head span { color: #555; white-space: nowrap; font-size: 8.4pt; }
@@ -42,17 +45,18 @@
 
   footer {
     margin-top: 18px; padding-top: 7px; border-top: 2px solid #111;
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 5px 20px; font-size: 8.4pt; color: #444;
-    break-inside: avoid;
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 20px; font-size: 8pt; color: #444;
+    white-space: nowrap; text-align: left; break-inside: avoid;
   }
-  footer :nth-child(even) { text-align: right; }
+  footer .links { display: flex; gap: 16px; }
 </style>
 
 <header>
   <div>
     <h1>LUCAS KAMINSKI</h1>
-    <div class="role">PRODUCT ENGINEER &middot; FULL-STACK &middot; BACKEND</div>
+    <div class="role">SOFTWARE ENGINEER</div>
+    <div class="role-sub">Product &middot; Backend &middot; Full-Stack</div>
   </div>
   <div class="contact">
     <a href="mailto:contact@lucas-kaminski.dev">contact@lucas-kaminski.dev</a><br>
@@ -62,10 +66,12 @@
 </header>
 
 <h2>SUMMARY</h2>
-<p>Product Engineer with over 5 years of professional experience and 2 years running my own
-SaaS products. I like owning a problem end to end: figuring out what the product actually
-needs, getting stakeholders aligned on it, and shipping the backend systems behind AI
-products, crypto exchanges, data pipelines and real-time decision-making.</p>
+<p>Software Engineer with over 5 years of professional experience and 2 years running my own
+SaaS products. I am usually the engineer who turns a vague problem into something running in
+production: first engineer hired at a fintech that scaled to 10+ developers and 10,000+
+monthly active users, lead of the backend behind over 80% of a country's food deliveries, and
+founder of the SaaS products I build and operate today. I work close to product and
+stakeholders, and I own what I ship after it goes live.</p>
 
 <h2>SKILLS</h2>
 <dl class="kv">
@@ -85,9 +91,9 @@ products, crypto exchanges, data pipelines and real-time decision-making.</p>
   <div class="title">Senior Backend Software Engineer</div>
   <ul>
     <li>Led the development of a multi-API NestJS monolith backed by PostgreSQL, Firestore and Redis on GCP.</li>
-    <li>Wrote and maintained the Terraform setup that keeps development, staging and production reproducible.</li>
+    <li>Wrote and maintained the Terraform setup that keeps staging and production reproducible.</li>
     <li>Work directly with founders and operations stakeholders to scope requirements and turn them into delivered features.</li>
-    <li>Designed and built BentoGPT, an internal AI API that powers automation and intelligent features across internal and external platforms.</li>
+    <li>Designed and built Benny, an internal AI API that powers automation and intelligent features across internal and external platforms.</li>
     <li>Deployed a custom GL-based tile server for map visualization, which cut our reliance on third-party providers like OpenStreetMap.</li>
   </ul>
 </div>
@@ -97,8 +103,10 @@ products, crypto exchanges, data pipelines and real-time decision-making.</p>
   <div class="blurb">Independent studio building and operating small SaaS products</div>
   <div class="title">Founder and Engineer</div>
   <ul>
-    <li>Build, ship and operate SaaS products end to end, from product decisions to backend with Node.js and Python over PostgreSQL, frontend, infrastructure and customer support.</li>
-    <li>Run everything on self-managed infrastructure with GCP and Coolify, including deployments, monitoring and backups.</li>
+    <li>Build and ship the products end to end with TypeScript on Next.js and React, and Python services with FastAPI, SQLAlchemy and Alembic over PostgreSQL, MySQL and MongoDB.</li>
+    <li>Run the whole platform on a self-managed Hetzner VPS with Coolify, Docker and Traefik, with GitHub Actions deploying to staging and production.</li>
+    <li>Own reliability myself: Uptime Kuma for availability, Grafana, Loki and Alloy for logs, and layered backups to Backblaze B2.</li>
+    <li>Keep shared code in a versioned internal library instead of a service, so a repeated need costs one dependency bump rather than another moving part.</li>
   </ul>
 </div>
 
@@ -116,7 +124,7 @@ products, crypto exchanges, data pipelines and real-time decision-making.</p>
 
 <div class="entry">
   <div class="entry-head"><b><a href="https://www.siemens.com">Siemens R&amp;D Hub Curitiba</a></b><span>01/2022 to 06/2022 &middot; Hybrid</span></div>
-  <div class="blurb">Multinational technology company focused on smart grid solutions</div>
+  <div class="blurb">R&amp;D hub of a multinational technology company, working on smart grid solutions</div>
   <div class="title">Backend Developer Intern</div>
   <ul>
     <li>Developed ETL pipelines using Python and Oracle PL/SQL, integrating data into multiple client data warehouses.</li>
@@ -139,11 +147,13 @@ products, crypto exchanges, data pipelines and real-time decision-making.</p>
 <div class="entry">
   <div class="entry-head"><b>Bachelor's Degree in Data Science and Artificial Intelligence</b><span>2022 to 2024 &middot; Remote</span></div>
   <div class="blurb">UNIDOMBOSCO, Curitiba</div>
+  <ul><li>Completed the degree while working full time as a backend engineer.</li></ul>
 </div>
 
 <div class="entry">
   <div class="entry-head"><b>Technical Degree in Computer Science</b><span>2015 to 2018 &middot; In-person</span></div>
   <div class="blurb">TECPUC, Curitiba</div>
+  <ul><li>Four-year technical program covering programming, databases and networks.</li></ul>
 </div>
 
 <h2>LANGUAGES</h2>
@@ -154,8 +164,10 @@ products, crypto exchanges, data pipelines and real-time decision-making.</p>
 </dl>
 
 <footer>
-  <span><a href="https://lucas-kaminski.dev">lucas-kaminski.dev</a></span>
-  <span><a href="https://github.com/lucas-kaminski">github.com/lucas-kaminski</a></span>
-  <span><a href="https://linkedin.com/in/lucas-kaminski">linkedin.com/in/lucas-kaminski</a></span>
+  <span class="links">
+    <a href="https://lucas-kaminski.dev">lucas-kaminski.dev</a>
+    <a href="https://github.com/lucas-kaminski">github.com/lucas-kaminski</a>
+    <a href="https://linkedin.com/in/lucas-kaminski">linkedin.com/in/lucas-kaminski</a>
+  </span>
   <span>Updated <script>document.write(new Date().toLocaleString("en-US",{month:"long",year:"numeric"}))</script></span>
 </footer>
