@@ -4,11 +4,16 @@ set -euo pipefail
 cd "$(dirname "$0")"
 src="${1:-cv.html}"
 name="Lucas_Kaminski_CV"
-# cv-howdy.html -> "Lucas Kaminski CV howdy.pdf"
+# cv-howdy.html -> Lucas_Kaminski_CV_howdy.pdf
 suffix="$(basename "${src%.html}" | sed "s/^cv-*//; s/-/_/g")"
 [ -n "$suffix" ] && name="${name}_${suffix}"
 out="dist/$name.pdf"
 mkdir -p dist
 google-chrome --headless=new --disable-gpu --no-pdf-header-footer \
   --print-to-pdf="$out" "file://$PWD/$src" 2>/dev/null
+
+# copy into the vault so it is one click away from Obsidian
+vault="$HOME/vault/archive/personal"
+[ -d "$vault" ] && cp "$out" "$vault/"
+
 echo "$out"
