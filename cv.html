@@ -45,6 +45,7 @@
   .kv dd { margin: 0; }
 
   table.page { width: 100%; border-collapse: collapse; }
+  table.page > tbody > tr > td { vertical-align: top; }
   table.page > tbody > tr > td, table.page > tfoot > tr > td { padding: 0; }
   tfoot { display: table-footer-group; }
   footer {
@@ -193,3 +194,15 @@ of every decision I make at work.</p>
   <dt>Intermediate</dt><dd>Spanish, Dutch</dd>
 </dl>
 </td></tr></tbody></table>
+
+<script>
+  // O tfoot repete o rodapé em cada página, mas na última ele para logo abaixo do
+  // conteúdo. Esticar o corpo até a altura exata das N páginas empurra esse último
+  // rodapé para o pé. build.sh reexecuta com ?pages=N depois de contar as páginas.
+  const pages = +new URLSearchParams(location.search).get("pages");
+  if (pages > 0) {
+    const usable = 269 * 96 / 25.4; // A4 menos as margens de @page, em px
+    const foot = document.querySelector("footer").getBoundingClientRect().height;
+    document.querySelector("tbody td").style.height = pages * (usable - foot) + "px";
+  }
+</script>
