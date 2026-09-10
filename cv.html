@@ -179,12 +179,12 @@ what gets built to watching it in production, and the alerts come to me.</p>
 <h2>EDUCATION</h2>
 
 <div class="entry">
-  <div class="entry-head"><b>Bachelor's Degree in Data Science and Artificial Intelligence</b><span>2022 to 2024<i>Remote</i></span></div>
+  <div class="entry-head"><b>Bachelor's Degree in Data Science and Artificial Intelligence</b><span data-span="3y">2022 to 2024<i>Remote</i></span></div>
   <div class="blurb"><a href="https://unidombosco.edu.br">UNIDOMBOSCO</a>, <a href="https://www.google.com/maps/place/Curitiba,+PR">Curitiba</a></div>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b>Technical Degree in Computer Science</b><span>2015 to 2018<i>In-person</i></span></div>
+  <div class="entry-head"><b>Technical Degree in Computer Science</b><span data-span="4y">2015 to 2018<i>In-person</i></span></div>
   <div class="blurb"><a href="https://www.tecpuc.com.br">TECPUC</a>, <a href="https://www.google.com/maps/place/Curitiba,+PR">Curitiba</a></div>
 </div>
 
@@ -204,8 +204,12 @@ what gets built to watching it in production, and the alerts come to me.</p>
   document.getElementById("stamp").textContent =
     now.toLocaleString("en-US", { month: "long", year: "numeric" });
 
-  // "1y 3m" ao lado da modalidade, recalculado a cada build
-  for (const el of document.querySelectorAll("[data-from]")) {
+  // "1y 3m" na linha da data, recalculado a cada build
+  for (const el of document.querySelectorAll("[data-from], [data-span]")) {
+    if (el.dataset.span) {
+      el.firstChild.textContent += " \u00b7 " + el.dataset.span;
+      continue;
+    }
     const [y, m] = el.dataset.from.split("-").map(Number);
     const end = el.dataset.to
       ? el.dataset.to.split("-").map(Number)
@@ -213,8 +217,7 @@ what gets built to watching it in production, and the alerts come to me.</p>
     const months = (end[0] - y) * 12 + (end[1] - m);
     const span = [Math.floor(months / 12) && Math.floor(months / 12) + "y",
                   months % 12 && (months % 12) + "m"].filter(Boolean).join(" ");
-    const mode = el.querySelector("i");
-    if (span) mode.textContent = span + " \u00b7 " + mode.textContent;
+    if (span) el.firstChild.textContent += " \u00b7 " + span;
   }
 
   const pages = +new URLSearchParams(location.search).get("pages");
