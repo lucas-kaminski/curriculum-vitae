@@ -55,6 +55,8 @@
     white-space: nowrap; text-align: left; break-inside: avoid;
   }
   footer .links { display: flex; flex-direction: column; gap: 2px; }
+  footer .updated { text-align: right; line-height: 1.5; }
+  footer .updated b { font-weight: 400; }
 </style>
 
 <table class="page"><tfoot><tr><td>
@@ -64,7 +66,7 @@
     <a href="https://github.com/lucas-kaminski">github.com/lucas-kaminski</a>
     <a href="https://linkedin.com/in/lucas-kaminski">linkedin.com/in/lucas-kaminski</a>
   </span>
-  <span>Updated <script>document.write(new Date().toLocaleString("en-US",{month:"long",year:"numeric"}))</script></span>
+  <span class="updated">Last updated<br><b id="stamp"></b></span>
 </footer>
 </td></tr></tfoot><tbody><tr><td>
 <header>
@@ -84,8 +86,8 @@
 <p>Full-stack engineer, backend-heavy, five years shipping in fintech, crypto and logistics.
 I build with AI and I build AI: I take AI features from prompt to production, and AI sits in
 how I write everything else, which is why one person can ship and run three SaaS products at
-the same time. I stay close to the product,
-ask why before I build, and I'm still there after release.</p>
+the same time. I work the whole line, from arguing about
+what gets built to watching it in production, and the alerts come to me.</p>
 
 <h2>SKILLS</h2>
 <dl class="kv">
@@ -100,7 +102,7 @@ ask why before I build, and I'm still there after release.</p>
 <h2>PROFESSIONAL EXPERIENCE</h2>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://bento.ky">Bento</a></b><span>06/2025 to Present<i>Remote</i></span></div>
+  <div class="entry-head"><b><a href="https://bento.ky">Bento</a></b><span data-from="2025-06">06/2025 to Present<i>Remote</i></span></div>
   <div class="blurb">Logistics tech startup powering over 80% of food deliveries in the Cayman Islands</div>
   <div class="title">Senior Backend Software Engineer</div>
   <ul>
@@ -113,7 +115,7 @@ ask why before I build, and I'm still there after release.</p>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://meu.software">meu.software</a></b><span>04/2024 to Present<i>Remote</i></span></div>
+  <div class="entry-head"><b><a href="https://meu.software">meu.software</a></b><span data-from="2024-04">04/2024 to Present<i>Remote</i></span></div>
   <div class="blurb">Independent studio building and operating small SaaS products</div>
   <div class="title">Founder and Product Engineer</div>
   <ul>
@@ -126,7 +128,7 @@ ask why before I build, and I'm still there after release.</p>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://financialmove.com.br/">Financial Move</a></b><span>06/2022 to 06/2025<i>Remote</i></span></div>
+  <div class="entry-head"><b><a href="https://financialmove.com.br/">Financial Move</a></b><span data-from="2022-06" data-to="2025-06">06/2022 to 06/2025<i>Remote</i></span></div>
   <div class="blurb">EdTech and FinTech startup focused on cryptocurrencies and Web3</div>
   <div class="title">From Junior IV Backend to Senior I Full-Stack Software Engineer</div>
   <ul>
@@ -138,7 +140,7 @@ ask why before I build, and I'm still there after release.</p>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://www.siemens.com">Siemens R&amp;D Hub Curitiba</a></b><span>01/2022 to 06/2022<i>Hybrid</i></span></div>
+  <div class="entry-head"><b><a href="https://www.siemens.com">Siemens R&amp;D Hub Curitiba</a></b><span data-from="2022-01" data-to="2022-06">01/2022 to 06/2022<i>Hybrid</i></span></div>
   <div class="blurb">R&amp;D hub of a multinational technology company, working on smart grid solutions</div>
   <div class="title">Backend Developer Intern</div>
   <ul>
@@ -149,7 +151,7 @@ ask why before I build, and I'm still there after release.</p>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://excelsolutions.com.br/">Excel Solutions</a></b><span>05/2021 to 12/2021<i>Remote</i></span></div>
+  <div class="entry-head"><b><a href="https://excelsolutions.com.br/">Excel Solutions</a></b><span data-from="2021-05" data-to="2021-12">05/2021 to 12/2021<i>Remote</i></span></div>
   <div class="blurb">Microsoft Excel training and consulting company</div>
   <div class="title">Full-Stack Developer Intern</div>
   <ul>
@@ -198,6 +200,23 @@ ask why before I build, and I'm still there after release.</p>
   // O tfoot repete o rodapé em cada página, mas na última ele para logo abaixo do
   // conteúdo. Esticar o corpo até a altura exata das N páginas empurra esse último
   // rodapé para o pé. build.sh reexecuta com ?pages=N depois de contar as páginas.
+  const now = new Date();
+  document.getElementById("stamp").textContent =
+    now.toLocaleString("en-US", { month: "long", year: "numeric" });
+
+  // "1y 3m" ao lado da modalidade, recalculado a cada build
+  for (const el of document.querySelectorAll("[data-from]")) {
+    const [y, m] = el.dataset.from.split("-").map(Number);
+    const end = el.dataset.to
+      ? el.dataset.to.split("-").map(Number)
+      : [now.getFullYear(), now.getMonth() + 1];
+    const months = (end[0] - y) * 12 + (end[1] - m);
+    const span = [Math.floor(months / 12) && Math.floor(months / 12) + "y",
+                  months % 12 && (months % 12) + "m"].filter(Boolean).join(" ");
+    const mode = el.querySelector("i");
+    if (span) mode.textContent = span + " \u00b7 " + mode.textContent;
+  }
+
   const pages = +new URLSearchParams(location.search).get("pages");
   if (pages > 0) {
     const usable = 269 * 96 / 25.4; // A4 menos as margens de @page, em px
