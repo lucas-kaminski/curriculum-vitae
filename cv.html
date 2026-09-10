@@ -44,8 +44,11 @@
   .kv dt { font-weight: 700; }
   .kv dd { margin: 0; }
 
+  table.page { width: 100%; border-collapse: collapse; }
+  table.page > tbody > tr > td, table.page > tfoot > tr > td { padding: 0; }
+  tfoot { display: table-footer-group; }
   footer {
-    margin-top: 14px; padding-top: 7px; border-top: 2px solid #111;
+    padding-top: 7px; border-top: 2px solid #111;
     display: flex; justify-content: space-between; align-items: center;
     gap: 20px; font-size: 8pt; color: #444;
     white-space: nowrap; text-align: left; break-inside: avoid;
@@ -53,6 +56,16 @@
   footer .links { display: flex; flex-direction: column; gap: 2px; }
 </style>
 
+<table class="page"><tfoot><tr><td>
+<footer>
+  <span class="links">
+    <a href="https://lucas-kaminski.dev">lucas-kaminski.dev</a>
+    <a href="https://github.com/lucas-kaminski">github.com/lucas-kaminski</a>
+    <a href="https://linkedin.com/in/lucas-kaminski">linkedin.com/in/lucas-kaminski</a>
+  </span>
+  <span>Updated <script>document.write(new Date().toLocaleString("en-US",{month:"long",year:"numeric"}))</script></span>
+</footer>
+</td></tr></tfoot><tbody><tr><td>
 <header>
   <div>
     <h1>LUCAS KAMINSKI</h1>
@@ -62,7 +75,7 @@
   <div class="contact">
     <a href="mailto:contact@lucas-kaminski.dev">contact@lucas-kaminski.dev</a><br>
     <a href="https://wa.me/5541998119091">+55 41 99811-9091</a><br>
-    <a href="https://www.google.com/maps/place/S%C3%A3o+Francisco+do+Sul,+SC">São Francisco do Sul, SC, Brazil</a> (UTC-3)
+    <a href="https://www.google.com/maps/place/S%C3%A3o+Francisco+do+Sul,+SC">São Francisco do Sul, SC, Brazil</a> <a href="https://time.is/UTC-3">(UTC-3)</a>
   </div>
 </header>
 
@@ -153,7 +166,7 @@ of every decision I make at work.</p>
 
 <div class="entry">
   <div class="entry-head"><b>Meu Próprio Bot</b><span><a href="https://meupropriobot.com.br">meupropriobot.com.br</a></span></div>
-  <div class="blurb">Bots, CRM and a student area for online communities, in one place</div>
+  <div class="blurb">White-label bots, CRM and student area, carrying the community brand end to end</div>
 </div>
 
 <div class="entry">
@@ -179,12 +192,4 @@ of every decision I make at work.</p>
   <dt>Advanced</dt><dd>English</dd>
   <dt>Intermediate</dt><dd>Spanish, Dutch</dd>
 </dl>
-
-<footer>
-  <span class="links">
-    <a href="https://lucas-kaminski.dev">lucas-kaminski.dev</a>
-    <a href="https://github.com/lucas-kaminski">github.com/lucas-kaminski</a>
-    <a href="https://linkedin.com/in/lucas-kaminski">linkedin.com/in/lucas-kaminski</a>
-  </span>
-  <span>Updated <script>document.write(new Date().toLocaleString("en-US",{month:"long",year:"numeric"}))</script></span>
-</footer>
+</td></tr></tbody></table>
