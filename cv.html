@@ -18,8 +18,8 @@
     gap: 20px; padding-bottom: 4px;
   }
   h1 { font-size: 19pt; letter-spacing: .18em; margin: 0; line-height: 1.1; }
-  .role { letter-spacing: .16em; font-size: 10pt; font-weight: 700; margin-top: 5px; }
-  .role-sub { letter-spacing: .12em; font-size: 8.2pt; color: #666; margin-top: 2px; }
+  .role { letter-spacing: .16em; font-size: 10pt; font-weight: 700; margin-top: 2px; }
+  .role-sub { letter-spacing: .12em; font-size: 8.2pt; color: #666; margin-top: 5px; }
   .contact { font-size: 8.4pt; text-align: right; line-height: 1.6; white-space: nowrap; }
 
   h2 {
@@ -42,6 +42,7 @@
   .kv { display: grid; grid-template-columns: 104px 1fr; gap: 2px 8px; margin: 0; text-align: left; }
   .kv dt { font-weight: 700; }
   .kv dd { margin: 0; }
+  .kv.two { grid-template-columns: 104px 1fr 104px 1fr; }
 
   table.page { width: 100%; border-collapse: collapse; }
   table.page > tbody > tr > td { vertical-align: top; }
@@ -71,13 +72,13 @@
 <header>
   <div>
     <h1>LUCAS KAMINSKI</h1>
+    <div class="role-sub">Backend &middot; Full-Stack &middot; Product</div>
     <div class="role">SOFTWARE ENGINEER</div>
-    <div class="role-sub">Product &middot; Backend &middot; Full-Stack</div>
   </div>
   <div class="contact">
+    <a href="https://www.google.com/maps/place/S%C3%A3o+Francisco+do+Sul,+SC">São Francisco do Sul, SC, Brazil</a> <a href="https://time.is/UTC-3">(UTC-3)</a><br>
     <a href="mailto:contact@lucas-kaminski.dev">contact@lucas-kaminski.dev</a><br>
-    <a href="https://wa.me/5541998119091">+55 41 99811-9091</a><br>
-    <a href="https://www.google.com/maps/place/S%C3%A3o+Francisco+do+Sul,+SC">São Francisco do Sul, SC, Brazil</a> <a href="https://time.is/UTC-3">(UTC-3)</a>
+    <a href="https://wa.me/5541998119091">+55 41 99811-9091</a>
   </div>
 </header>
 
@@ -106,9 +107,9 @@ building AI features in production, such as Bento's support chat.</p>
   <div class="title">Senior Backend Software Engineer</div>
   <div class="blurb">Logistics tech startup powering over 80% of food deliveries in the Cayman Islands</div>
   <ul>
-    <li>Moved business rules from the frontend to the backend and merged APIs duplicated across separate repos into one NestJS monolith, used by the mobile app, the web app and internal tools. This ended bugs from rules diverging between APIs, and a change now ships once instead of as one task per project.</li>
-    <li>Built and maintained the GCP infrastructure in Terraform, covering PostgreSQL, Firestore and Redis. Staging and production have zero drift, and any new resource is a few lines of auditable code instead of clicks in a console.</li>
-    <li>Designed and built Benny, the AI layer behind support chat, menu copy, food photo retouching and screenshot reading. In support, Benny answers first, which reduced response time and improved customer satisfaction. The rest reaches dispatchers with full context and a clear next action, so they can focus on coordinating drivers.</li>
+    <li>Moved business rules from the frontend to the backend and merged APIs duplicated across separate repos into one NestJS monolith, used by the mobile app, the web app, internal tools and third-party systems such as POSs. This ended bugs from rules diverging between APIs, and a change now ships once instead of as one task per project.</li>
+    <li>Built and maintained the whole GCP infrastructure in Terraform, from Cloud Run, GKE and Pub/Sub to Firestore and the load balancer. Staging and production have zero drift, and any new resource is a few lines of auditable code instead of clicks in a console.</li>
+    <li>Built Benny, the AI layer behind support chat, menu copy, food photo retouching and reading invoices, photos and screenshots. In support, Benny answers first, which reduced response time and improved customer satisfaction. The rest reaches dispatchers with full context and a clear next action, so they can focus on coordinating drivers.</li>
     <li>Deployed a custom GL-based tile server for map visualization, ending the 429 errors, cost and uncertain availability of third-party providers such as OpenStreetMap.</li>
   </ul>
 </div>
@@ -145,48 +146,53 @@ building AI features in production, such as Bento's support chat.</p>
   </ul>
 </div>
 
-<h2>EDUCATION</h2>
-
-<div class="entry">
-  <div class="entry-head"><b>Bachelor's Degree in Data Science and Artificial Intelligence</b><span data-span="3y">Remote &middot; 2022 to 2024</span></div>
-  <div class="blurb"><a href="https://unidombosco.edu.br">UNIDOMBOSCO</a>, <a href="https://www.google.com/maps/place/Curitiba,+PR">Curitiba</a></div>
-</div>
-
-<div class="entry">
-  <div class="entry-head"><b>Technical Degree in Computer Science</b><span data-span="4y">In-person &middot; 2015 to 2018</span></div>
-  <div class="blurb"><a href="https://www.tecpuc.com.br">TECPUC</a>, <a href="https://www.google.com/maps/place/Curitiba,+PR">Curitiba</a></div>
-</div>
-
 <h2>PROJECTS</h2>
 
 <div class="entry">
   <div class="entry-head"><b>Self-hosted platform</b><span>Hetzner &middot; Coolify</span></div>
-  <div class="blurb">Infrastructure that hosts the side projects, built and operated solo</div>
+  <div class="blurb">Infrastructure behind the products below and private personal tools, built and operated solo</div>
   <ul>
-    <li>Python services in FastAPI, SQLAlchemy and Alembic, TypeScript apps in Next.js, data in PostgreSQL, MySQL and MongoDB.</li>
-    <li>Self-managed Hetzner VPS running Coolify, Docker and Traefik. GitHub Actions deploys to staging and production.</li>
-    <li>Uptime Kuma for availability, Grafana, Loki and Alloy for logs, layered backups to Backblaze B2.</li>
+    <li>Full-stack Python apps in Flask and Jinja, with SQLAlchemy and Alembic.</li>
+    <li>Full-stack TypeScript apps in Next.js.</li>
+    <li>SQL in PostgreSQL, NoSQL in MongoDB and Redis.</li>
+    <li>Self-managed Hetzner VPS running Coolify, Docker and Traefik.</li>
+    <li>Deploys to staging and production through GitHub Actions or Coolify auto-deploy.</li>
+    <li>Uptime Kuma for availability.</li>
+    <li>Grafana, Loki and Alloy for logs.</li>
+    <li>Layered backups to Backblaze B2.</li>
     <li>Shared code is a versioned internal library rather than a separate service, so there is less to deploy and monitor.</li>
   </ul>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b>Adra</b><span><a href="https://adra.software">adra.software</a></span></div>
-  <div class="blurb">Toolkit for marketers covering ad cloaking detection and campaign operations</div>
-</div>
-
-<div class="entry">
-  <div class="entry-head"><b>Meu Próprio Bot</b><span><a href="https://meupropriobot.com.br">meupropriobot.com.br</a></span></div>
+  <div class="entry-head"><b><a href="https://meupropriobot.com.br">Meu Próprio Bot (My Own Bot)</a></b><span><a href="https://meupropriobot.com.br">meupropriobot.com.br</a></span></div>
   <div class="blurb">White-label bots, CRM and student area under the community's own brand</div>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b>KeepUp</b><span><a href="https://keepup.meu.software">keepup.meu.software</a></span></div>
+  <div class="entry-head"><b><a href="https://adra.software">Adra</a></b><span><a href="https://adra.software">adra.software</a></span></div>
+  <div class="blurb">Toolkit for marketers covering ad cloaking detection and campaign operations</div>
+</div>
+
+<div class="entry">
+  <div class="entry-head"><b><a href="https://keepup.meu.software">KeepUp</a></b><span><a href="https://keepup.meu.software">keepup.meu.software</a></span></div>
   <div class="blurb">Back-in-stock and price alerts for online shoppers, fed by scraper workers</div>
 </div>
 
+<h2>EDUCATION</h2>
+
+<div class="entry">
+  <div class="entry-head"><b><a href="https://unidombosco.edu.br">Bachelor's Degree in Data Science and Artificial Intelligence</a></b><span data-span="3y">Remote &middot; 2022 to 2024</span></div>
+  <div class="blurb"><a href="https://unidombosco.edu.br">UNIDOMBOSCO</a>, <a href="https://www.google.com/maps/place/Curitiba,+PR">Curitiba</a></div>
+</div>
+
+<div class="entry">
+  <div class="entry-head"><b><a href="https://www.tecpuc.com.br">Technical Degree in Computer Science</a></b><span data-span="4y">In-person &middot; 2015 to 2018</span></div>
+  <div class="blurb"><a href="https://www.tecpuc.com.br">TECPUC</a>, <a href="https://www.google.com/maps/place/Curitiba,+PR">Curitiba</a></div>
+</div>
+
 <h2>LANGUAGES</h2>
-<dl class="kv">
+<dl class="kv two">
   <dt>Native</dt><dd>Portuguese</dd>
   <dt>Fluent</dt><dd>English</dd>
   <dt>Intermediate</dt><dd>Spanish</dd>
