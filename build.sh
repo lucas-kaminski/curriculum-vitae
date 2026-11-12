@@ -23,4 +23,14 @@ render "?pages=$(pdfinfo "$out" | awk '/^Pages:/{print $2}')"
 vault="$HOME/vault/archive/work"
 [ -d "$vault" ] && cp "$out" "$vault/"
 
+# README previews and the GitHub release track the main CV only, not tailored copies
+if [ "$src" = cv.html ]; then
+  rm -f docs/preview-*.png
+  pdftoppm -png -r 60 "$out" docs/preview
+  # one release per day; a rebuild the same day replaces the PDF
+  tag="cv-$(date +%F)"
+  gh release upload "$tag" "$out" --clobber 2>/dev/null ||
+    gh release create "$tag" "$out" --title "CV $(date +%F)" --notes "Latest build of cv.html." >/dev/null
+fi
+
 echo "$out"

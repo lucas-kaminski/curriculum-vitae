@@ -19,5 +19,6 @@ body so the footer sits at the foot of the last page.
     ./build.sh              # -> dist/Lucas_Kaminski_CV.pdf
     ./build.sh cv-node.html # -> dist/Lucas_Kaminski_CV_node.pdf
 
-Needs Google Chrome and `pdfinfo` (poppler-utils). To tailor it for a role, copy
+Building `cv.html` also refreshes `docs/preview-*.png` and uploads the PDF to a
+GitHub release tagged with the day. Needs Google Chrome, poppler-utils and `gh`. To tailor it for a role, copy
 `cv.html` and edit. Git history is the version log.
