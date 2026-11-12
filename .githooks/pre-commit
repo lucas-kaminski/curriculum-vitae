@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Rebuild when cv.html is in the commit, so the previews and the release never lag behind.
+set -euo pipefail
+git diff --cached --name-only | grep -qx cv.html || exit 0
+./build.sh >/dev/null
+git add -A docs

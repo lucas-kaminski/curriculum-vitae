@@ -22,4 +22,7 @@ body so the footer sits at the foot of the last page.
 Building `cv.html` also refreshes `docs/preview-*.png` and uploads the PDF to a
 GitHub release tagged with the day. Needs Google Chrome, poppler-utils and `gh`.
 
+A pre-commit hook in `.githooks` runs the build whenever `cv.html` is committed
+(enable it once with `git config core.hooksPath .githooks`).
+
 To tailor it for a role, copy `cv.html` and edit. Git history is the version log.
