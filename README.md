@@ -1,8 +1,5 @@
 # Lucas Kaminski — CV
 
-Senior backend / full-stack engineer. TypeScript, Python, GCP.
-[lucas-kaminski.dev](https://lucas-kaminski.dev) · [LinkedIn](https://linkedin.com/in/lucas-kaminski)
-
 **[Download the latest PDF](https://github.com/lucas-kaminski/curriculum-vitae/releases/latest/download/Lucas_Kaminski_CV.pdf)**
 
 <p>
