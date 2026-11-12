@@ -20,7 +20,7 @@ render ""
 render "?pages=$(pdfinfo "$out" | awk '/^Pages:/{print $2}')"
 
 # copy into the vault so it is one click away from Obsidian
-vault="$HOME/vault/archive/tech"
+vault="$HOME/vault/archive"
 [ -d "$vault" ] && cp "$out" "$vault/"
 
 echo "$out"
