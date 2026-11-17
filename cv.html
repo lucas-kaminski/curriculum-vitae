@@ -182,12 +182,12 @@ building AI features in production, such as Bento's support chat.</p>
 <h2>EDUCATION</h2>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://unidombosco.edu.br">Bachelor's Degree in Data Science and Artificial Intelligence</a></b><span data-span="3y">Remote &middot; 2022 to 2024</span></div>
+  <div class="entry-head"><b><a href="https://unidombosco.edu.br">Bachelor's Degree in Data Science and Artificial Intelligence</a></b><span>Remote &middot; 06/2019 to 12/2024</span></div>
   <div class="blurb"><a href="https://unidombosco.edu.br">UNIDOMBOSCO</a>, <a href="https://www.google.com/maps/place/Curitiba,+PR">Curitiba</a></div>
 </div>
 
 <div class="entry">
-  <div class="entry-head"><b><a href="https://www.tecpuc.com.br">Technical Degree in Computer Science</a></b><span data-span="4y">In-person &middot; 2015 to 2018</span></div>
+  <div class="entry-head"><b><a href="https://www.tecpuc.com.br">Technical Degree in Computer Science</a></b><span>In-person &middot; 02/2015 to 11/2018</span></div>
   <div class="blurb"><a href="https://www.tecpuc.com.br">TECPUC</a>, <a href="https://www.google.com/maps/place/Curitiba,+PR">Curitiba</a></div>
 </div>
 
@@ -209,16 +209,13 @@ building AI features in production, such as Bento's support chat.</p>
     now.toLocaleString("en-US", { month: "long", year: "numeric" });
 
   // "1y 3m" na linha da data, recalculado a cada build
-  for (const el of document.querySelectorAll("[data-from], [data-span]")) {
-    if (el.dataset.span) {
-      el.firstChild.textContent += " \u00b7 " + el.dataset.span;
-      continue;
-    }
+  // conta os dois meses das pontas, igual ao LinkedIn (06/2022 a 05/2025 = 3y)
+  for (const el of document.querySelectorAll("[data-from]")) {
     const [y, m] = el.dataset.from.split("-").map(Number);
     const end = el.dataset.to
       ? el.dataset.to.split("-").map(Number)
       : [now.getFullYear(), now.getMonth() + 1];
-    const months = (end[0] - y) * 12 + (end[1] - m);
+    const months = (end[0] - y) * 12 + (end[1] - m) + 1;
     const span = [Math.floor(months / 12) && Math.floor(months / 12) + "y",
                   months % 12 && (months % 12) + "m"].filter(Boolean).join(" ");
     if (span) el.firstChild.textContent += " \u00b7 " + span;
