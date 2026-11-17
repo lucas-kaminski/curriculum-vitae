@@ -14,8 +14,8 @@ render() {
     --window-size=794,1123 --print-to-pdf="$out" "file://$PWD/$src$1" 2>/dev/null
 }
 
-# duas passadas: a primeira só para contar as páginas, a segunda para a página
-# esticar o corpo e o rodapé do tfoot cair no pé da última folha também
+# two passes: the first only counts the pages, the second stretches the page
+# so the body is expanded and the tfoot footer also falls at the bottom of the last page
 render ""
 render "?pages=$(pdfinfo "$out" | awk '/^Pages:/{print $2}')"
 
