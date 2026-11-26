@@ -160,8 +160,7 @@ building AI features in production, such as Bento's support chat.</p>
     <li>SQL in PostgreSQL, NoSQL in MongoDB and Redis.</li>
     <li>Self-managed Hetzner VPS running Coolify, Docker and Traefik.</li>
     <li>Deploys to staging and production through GitHub Actions or Coolify auto-deploy.</li>
-    <li>Uptime Kuma for availability.</li>
-    <li>Grafana, Loki and Alloy for logs.</li>
+    <li>Uptime Kuma for availability; Grafana, Loki and Alloy for logs.</li>
     <li>Layered backups to Backblaze B2.</li>
     <li>Shared code is a versioned internal library rather than a separate service, so there is less to deploy and monitor.</li>
   </ul>
@@ -171,10 +170,16 @@ building AI features in production, such as Bento's support chat.</p>
   <div class="entry-head"><b><a href="https://meupropriobot.com.br">meupropriobot</a></b><span><a href="https://meupropriobot.com.br">meupropriobot.com.br</a></span></div>
   <div class="blurb">Platform for paid communities</div>
   <ul>
-    <li>Runs paid communities on Telegram and Discord: access by plan, a members area, segmented announcements and renewal reminders, under each community's own brand and domain.</li>
-    <li>Live in production with a pilot community.</li>
-    <li>Multi-tenant, with isolation between communities enforced by PostgreSQL row-level security.</li>
-    <li>Ships an MCP server, so a community's admins can run it from their own AI agent.</li>
+    <li>Runs paid communities on Telegram and Discord: access by plan, a members area, announcements and renewal reminders, under each community's own brand.</li>
+    <li>Live with a pilot community. Multi-tenant on PostgreSQL row-level security, with an MCP server so admins run it from their own AI agent.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head"><b><a href="https://bufunfa.meu.software">bufunfa</a></b><span><a href="https://bufunfa.meu.software">bufunfa.meu.software</a></span></div>
+  <div class="blurb">Household finance app</div>
+  <ul>
+    <li>Month-end forecast, receipts read by AI, and MCP for the user's own AI agent.</li>
   </ul>
 </div>
 
